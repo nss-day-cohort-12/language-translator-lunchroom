@@ -16,6 +16,24 @@ var Dictionary = (function() {
   };
 
   return {
+    handleCaps: function(userInput) {
+      //trim whitespace from before and after userInput
+      userInput = userInput.trim();
+
+      for (var i = 0; i < userInput.length - 1; i++) {
+        if (userInput[i] === "." || userInput[i] === "!" || userInput === "?"){
+          var j = i + 1;
+          while(userInput[j] === " "){
+            //find the next letter to capitalize
+            j++;
+          }
+          //console.log("j", j);
+          //console.log("userInput[j]", userInput[j]);
+          userInput = userInput.slice(0, j) + userInput[j].toUpperCase() + userInput.slice(j+1);
+        }
+      }
+      return userInput;
+    },
     getGermanLexicon: function() {
       return germanLexicon;
     },
@@ -30,19 +48,8 @@ var Dictionary = (function() {
       
       userInput = userInput[0].toUpperCase() + userInput.slice(1);
       
-      
-      for (var i = 0; i < userInput.length; i++) {
-        if (userInput[i] === "." || userInput[i] === "!" || userInput === "?"){
-          var j = i + 1;
-          while(userInput[j] === " "){
-            j++;
-          }
-          userInput = userInput.slice(0, j) + userInput[j].toUpperCase() + userInput.slice(j+1);
-        }
-      }
-
-      return userInput;
+      return Dictionary.handleCaps(userInput);
     }
-  };
+  }
 
 })();
