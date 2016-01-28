@@ -9,6 +9,9 @@ function translate() {
 	var selector = document.getElementById("selectLanguage").selectedIndex;
 	console.log("Selected Index: ", selector);
 
+	//get reference to flag container
+	var flagImage = document.getElementById('flag')
+
 	//get text input value	
 	var text = document.getElementById("text").value;
 	console.log("Entered Text: ", text);	
@@ -16,6 +19,9 @@ function translate() {
 	if (selector === 1) {
 		console.log("Spanish");
 
+		//adds spanish flag css
+		flagImage.classList.add('spanish');
+		
 		//take text string and run through translator
 		var translatedText = Dictionary.translateToSpanish(text);
 		console.log("translatedText", translatedText);
@@ -32,6 +38,9 @@ function translate() {
 	}
 	else if (selector === 2) {
 		console.log("French");
+
+		//adds french flag css
+		flagImage.classList.add('france');
 		
 		//take text string and run through translator
 		var translatedText = Dictionary.translateToFrench(text);
@@ -49,6 +58,9 @@ function translate() {
 	}
 	else if (selector === 3) {
 		console.log("German");
+
+		//adds german flag css
+		flagImage.classList.add('german');
 	
 		//take text string and run through translator
 		var translatedText = Dictionary.translateToGerman(text);
