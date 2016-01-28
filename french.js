@@ -40,7 +40,7 @@ var Dictionary = (function (prevDictionary) {
 		for (var key in frenchLexicon) {
 			userInput = userInput.replace(key, frenchLexicon[key]);
 	}
-	return userInput;
+	return Dictionary.handleCaps(userInput);
 	};
 	
 	return prevDictionary;
