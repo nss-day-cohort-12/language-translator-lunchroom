@@ -2,16 +2,16 @@ var Dictionary = (function() {
 
   var germanLexicon = {
     "good": "gut",
-    "christmas": "Weihnachten",
+    "christmas": "weihnachten",
     "happy": "lustig",
     "new": "neu",
-    "year": "Jahr",
-    "beer": "Bier",
+    "year": "jahr",
+    "beer": "bier",
     "hello": "hallo",
     "you": "du",
     "the": "der",
-    "birthday": "Geburtstag",
-    "anniversary": "Jahrestag",
+    "birthday": "geburtstag",
+    "anniversary": "jahrestag",
     "and": "und"
   };
 
@@ -46,6 +46,19 @@ var Dictionary = (function() {
       //for each key in germanLexicon, replace with the key's value if found
       for (var key in germanLexicon){
         userInput = userInput.replace(key, germanLexicon[key]);
+      }
+      
+      
+      return Dictionary.handleCaps(userInput);
+    },
+
+    translateFromGerman: function(userInput) {
+      //convert user Input to all lowerCase
+      userInput = userInput.toLowerCase();
+
+      //for each value in germanLexicon, replace with the key if found
+      for (var key in germanLexicon){
+        userInput = userInput.replace(germanLexicon[key], key);
       }
       
       
