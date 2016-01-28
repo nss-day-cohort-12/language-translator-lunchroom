@@ -5,24 +5,29 @@
 <head>
   <meta charset="utf-8">
   <title>Translate</title>
-  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body> 
-<textarea id="text" cols="30" rows="5"></textarea>  
 
-<br>
-<select name="selector" id="selectLanguage">
-<option selected="" disabled="disabled">- Pick a Language -</option>
-<option name="selector" value="Spanish">Spanish</option>
-<option name="selector" value="French">French</option>
-<option name="selector" value="German">German</option>
-</select>
+<div class="container">
 
-<br>
-<button id="translate">translate</button>
+	<h1>Welcome to Translator 1.0</h1>
+	<textarea id="text" class="text" cols="30" rows="5" ></textarea>  
 
-<div id="translatedText"></div>
+	
+	<select name="selector" id="selectLanguage" class="selectLanguage" >
+	<option selected="" disabled="disabled">- Pick a Language -</option>
+	<option name="selector" value="Spanish">Spanish</option>
+	<option name="selector" value="French">French</option>
+	<option name="selector" value="German">German</option>
+	</select>
+
+	
+	<button id="translate" class="translate">Translate</button>
+
+	<div id="translatedText" class="translatedText"></div>
+</div>
 
   <script src="german.js"></script>
   <script src="spanish.js"></script>
