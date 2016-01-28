@@ -1,3 +1,6 @@
+
+
+
 var Dictionary = (function (prevDictionary) {
 
 	var frenchLexicon = {

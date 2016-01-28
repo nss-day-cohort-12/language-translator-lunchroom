@@ -1,0 +1,47 @@
+.clear {
+	clear: both;
+}
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 100%;
+	
+}
+
+.container {
+	margin: 50px auto;
+	padding: 10px;
+	width: 70%;
+	min-height: 100px;
+	box-shadow: inset 15px 15px 50px rgba(198, 216, 229, 1);
+	overflow: auto;
+	border: 2px outset #999;
+	text-align: center;
+	background-color: rgba(200, 200, 200, .3);
+}
+.text {
+	padding-bottom: 50px;
+	margin-top: 20px;
+	border: 2px outset #999;
+}
+
+.translate {
+	margin: 0 auto;
+	padding: 5px 15px;
+	display: block;
+	margin-top: 10px;
+	border: 2px outset #999;
+	border-radius: 10px;
+
+
+}
+
+.translate:hover {
+	background-color: #999;
+
+}
+.selectLanguage {
+	margin: 0 auto;
+	display: block;
+	margin-top: 10px;
+}
