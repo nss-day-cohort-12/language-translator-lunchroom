@@ -2,16 +2,16 @@ var Dictionary = (function() {
 
   var germanLexicon = {
     "good": "gut",
-    "christmas": "Weihnachten",
+    "christmas": "weihnachten",
     "happy": "lustig",
     "new": "neu",
-    "year": "Jahr",
-    "beer": "Bier",
+    "year": "jahr",
+    "beer": "bier",
     "hello": "hallo",
     "you": "du",
     "the": "der",
-    "birthday": "Geburtstag",
-    "anniversary": "Jahrestag",
+    "birthday": "geburtstag",
+    "anniversary": "jahrestag",
     "and": "und"
   };
 

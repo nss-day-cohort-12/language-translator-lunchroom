@@ -16,7 +16,7 @@ function translate() {
 	console.log("Translate");
 	// takes toLanguage options and returns them as an Index
 	var toLanguage = document.getElementById("toLanguage").value;
-	console.log("Selected Index: ", toLanguage);
+	console.log("toLanguage: ", toLanguage);
 
 	//get reference to flag container
 	var flagImage = document.getElementById('flag')
@@ -25,12 +25,13 @@ function translate() {
 	var text = document.getElementById("text").value;
 	console.log("Entered Text: ", text);
 
-  var from = document.getElementById("fromLanguage").value;
+  var fromLanguage = document.getElementById("fromLanguage").value;
+  console.log("from lanaguage", fromLanguage);
 
-  if (from === "English"){
+  if (fromLanguage === "English"){
 
 
-  	if  toLanguage === "Spanish") {
+  	if  (toLanguage === "Spanish") {
   		console.log("Spanish");
 
   		//adds spanish flag css
@@ -47,7 +48,7 @@ function translate() {
 
   		return;
   	}
-  	else if  toLanguage === "French") {
+  	else if  (toLanguage === "French") {
   		console.log("French");
 
   		//adds french flag css
@@ -64,7 +65,7 @@ function translate() {
 
   		return;
   	}
-  	else if  toLanguage === "German") {
+  	else if  (toLanguage === "German") {
   		console.log("German");
 
   		//adds german flag css
@@ -91,15 +92,67 @@ function translate() {
   	    window.speechSynthesis.speak(msg);
   	    alert("Please Select a Language");
   		}
-  } else {
+  }
+
+
+
+
+   else {
 
     if (fromLanguage === "Spanish" && toLanguage === "German"){
-      Dictionary.translateToGerman(Dictionary.translateFromSpanish(text));
+      var translatedText = Dictionary.translateToGerman(Dictionary.translateFromSpanish(text));
+
+      //enters translated text to innerHTML
+      document.getElementById("translatedText").innerHTML = translatedText;
+      
+      speak("de", translatedText);
+    }
+
+    else if (fromLanguage === "Spanish" && toLanguage === "French"){
+      var translatedText = Dictionary.translateToFrench(Dictionary.translateFromSpanish(text));
+
+      //enters translated text to innerHTML
+      document.getElementById("translatedText").innerHTML = translatedText;
+      
+      speak("fr", translatedText);
     }
 
 
+    else if (fromLanguage === "French" && toLanguage === "German"){
+      var translatedText = Dictionary.translateToGerman(Dictionary.translateFromFrench(text));
 
+      //enters translated text to innerHTML
+      document.getElementById("translatedText").innerHTML = translatedText;
+      
+      speak("de", translatedText);
+    }
 
+    else if (fromLanguage === "French" && toLanguage === "Spanish"){
+      var translatedText = Dictionary.translateToSpanish(Dictionary.translateFromFrench(text));
+
+      //enters translated text to innerHTML
+      document.getElementById("translatedText").innerHTML = translatedText;
+      
+      speak("es", translatedText);
+    }
+
+    else if (fromLanguage === "German" && toLanguage === "Spanish"){
+      var translatedText = Dictionary.translateToSpanish(Dictionary.translateFromGerman(text));
+
+      //enters translated text to innerHTML
+      document.getElementById("translatedText").innerHTML = translatedText;
+      
+      speak("es", translatedText);
+    }
+
+    else {
+      var translatedText = Dictionary.translateToFrench(Dictionary.translateFromGerman(text));
+
+      //enters translated text to innerHTML
+      document.getElementById("translatedText").innerHTML = translatedText;
+      
+      speak("fr", translatedText);
+    }
 
   }
 }
