@@ -22,6 +22,20 @@ var Dictionary = (function(prevDictionary) {
 		return spanishLexicon;
 	};
 	
+  prevDictionary.translateFromSpanish = function(userInput) {
+      //convert user Input to all lowerCase
+      userInput = userInput.toLowerCase();
+
+      //for each value in germanLexicon, replace with the key if found
+      for (var key in spanishLexicon){
+        userInput = userInput.replace(spanishLexicon[key], key);
+      }
+      
+      
+      return Dictionary.handleCaps(userInput);
+    }
+
+
 	prevDictionary.translateToSpanish = function(userInput) {
       //translate userInput to Spanish
 

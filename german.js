@@ -50,6 +50,19 @@ var Dictionary = (function() {
       
       
       return Dictionary.handleCaps(userInput);
+    },
+
+    translateFromGerman: function(userInput) {
+      //convert user Input to all lowerCase
+      userInput = userInput.toLowerCase();
+
+      //for each value in germanLexicon, replace with the key if found
+      for (var key in germanLexicon){
+        userInput = userInput.replace(germanLexicon[key], key);
+      }
+      
+      
+      return Dictionary.handleCaps(userInput);
     }
   }
 
