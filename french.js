@@ -18,21 +18,17 @@ var Dictionary = (function (prevDictionary) {
 		"are":"sommes",
 		"crazy":"fou"
 	};
-	// var dictionaryArray = Object.keys(frenchLexicon)
-	// console.log(dictionaryArray);
-
+	
 	prevDictionary.getFrenchLexicon = function() {
 		return frenchLexicon;
-	},
-	prevDictionary.translateToFrench = function(translate) {
-		for (var englishWord in frenchLexicon) {
-			console.log(englishWord);
-		};
+	};
+	prevDictionary.translateToFrench = function(userInput) {
+		for (var key in frenchLexicon) {
+			userInput = userInput.replace(key, frenchLexicon[key]);
 	}
-
+	return userInput;
+	};
 	return prevDictionary;
-
-
 })(Dictionary);
 
 
