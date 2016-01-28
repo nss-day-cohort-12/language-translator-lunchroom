@@ -3,6 +3,15 @@
 var button = document.getElementById("translate");
 button.addEventListener("click", translate);
 
+
+function speak(language, translatedText) {
+  //speak the translated text in the given language
+    var msg = new SpeechSynthesisUtterance(translatedText);
+    msg.pitch = 0;
+    msg.lang = language;
+    window.speechSynthesis.speak(msg);
+} 
+
 function translate() {
 	console.log("Translate");
 	// takes selector options and returns them as an Index
@@ -23,11 +32,8 @@ function translate() {
 		//enters translated text to innerHTML
 		document.getElementById('translatedText').innerHTML = translatedText;
 
-		//adds Spanish speech reader function
-		var msg = new SpeechSynthesisUtterance(translatedText);
-    	msg.pitch = 0;
-    	msg.lang = 'es';
-    	window.speechSynthesis.speak(msg);
+    speak("es", translatedText);
+
 		return;
 	}
 	else if (selector === 2) {
@@ -40,11 +46,8 @@ function translate() {
 		//enters translated text to innerHTML
 		document.getElementById('translatedText').innerHTML = translatedText;
 		
-		//adds French speech reader function
-		var msg = new SpeechSynthesisUtterance(translatedText);
-	    msg.pitch = 1;
-	    msg.lang = 'fr';
-	    window.speechSynthesis.speak(msg);
+		speak("fr", translatedText);
+
 		return;
 	}
 	else if (selector === 3) {
@@ -57,11 +60,8 @@ function translate() {
 		//enters translated text to innerHTML
 		document.getElementById("translatedText").innerHTML = translatedText;
 
-		//adds German speech reader function
-		var msg = new SpeechSynthesisUtterance(translatedText);
-	    msg.pitch = 0;
-	    msg.lang = 'de';
-	    window.speechSynthesis.speak(msg);
+    speak("de", translatedText);
+
 		return;
 	}
 	else {
