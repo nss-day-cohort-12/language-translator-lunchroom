@@ -32,7 +32,7 @@ var Dictionary = (function(prevDictionary) {
       for (var key in spanishLexicon){
         userInput = userInput.replace(key, spanishLexicon[key]);
       }
-      return userInput;
+      return Dictionary.handleCaps(userInput);
   	};
 	
 	return prevDictionary;
