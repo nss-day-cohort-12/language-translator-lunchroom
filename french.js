@@ -22,13 +22,21 @@ var Dictionary = (function (prevDictionary) {
 	prevDictionary.getFrenchLexicon = function() {
 		return frenchLexicon;
 	};
+
 	prevDictionary.translateToFrench = function(userInput) {
+		//translate userInput to French
+
+		//convert user Input to all lowerCase
+		userInput = userInput.toLowerCase();
 		for (var key in frenchLexicon) {
 			userInput = userInput.replace(key, frenchLexicon[key]);
 	}
 	return userInput;
 	};
+	
 	return prevDictionary;
 })(Dictionary);
+
+
 
 
