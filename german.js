@@ -8,7 +8,6 @@ var Dictionary = (function() {
     "year": "Jahr",
     "beer": "Bier",
     "hello": "hallo",
-    "is": "ist",
     "you": "du",
     "the": "der",
     "birthday": "Geburtstag",
@@ -28,6 +27,20 @@ var Dictionary = (function() {
       for (var key in germanLexicon){
         userInput = userInput.replace(key, germanLexicon[key]);
       }
+      
+      userInput = userInput[0].toUpperCase() + userInput.slice(1);
+      
+      
+      for (var i = 0; i < userInput.length; i++) {
+        if (userInput[i] === "." || userInput[i] === "!" || userInput === "?"){
+          var j = i + 1;
+          while(userInput[j] === " "){
+            j++;
+          }
+          userInput = userInput.slice(0, j) + userInput[j].toUpperCase() + userInput.slice(j+1);
+        }
+      }
+
       return userInput;
     }
   };
