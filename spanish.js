@@ -6,7 +6,17 @@ var Dictionary = (function(prevDictionary) {
 		"and":"y", 
 		"happy":"feliz",
 		"new":"nuevo", 
-		"year":"año"
+		"year":"año",
+		"hello":"hola",
+		"thank":"gracias",
+		"you":"usted",
+		"birthday":"cumpleaños",
+		"beer":"cerveza",
+		"is":"es",
+		"good":"bien",
+		"people":"gente",
+		"are":"están",
+		"crazy":"loca"
 	};
 
 	prevDictionary.getSpanishLexicon = function() {
