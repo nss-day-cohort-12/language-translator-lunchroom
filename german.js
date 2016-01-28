@@ -13,7 +13,7 @@ var Dictionary = (function() {
     "the": "der",
     "birthday": "Geburtstag",
     "anniversary": "Jahrestag",
-    "and", "und"
+    "and": "und"
   };
 
   return {
