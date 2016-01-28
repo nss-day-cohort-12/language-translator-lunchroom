@@ -32,16 +32,39 @@ body {
 	margin-top: 10px;
 	border: 2px outset #999;
 	border-radius: 10px;
-
-
 }
-
 .translate:hover {
 	background-color: #999;
-
+}
+.translatedText {	
+	margin-top: 20px;
 }
 .selectLanguage {
 	margin: 0 auto;
 	display: block;
 	margin-top: 10px;
 }
+
+
+.france {
+	background-image: url(http://www.french-flag.org/rippled-french-flag-720.jpg);
+
+}
+
+.german {
+	background-image: url(http://www.german-flag.org/german-640.gif);
+
+
+	}
+
+.spanish {
+	background-image: url(http://www.eventsloscabos.com/wp-content/uploads/2013/12/mexican-flag-bandera-6179-2.jpg);
+}
+
+
+
+
+
+
+
+
