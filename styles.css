@@ -18,6 +18,7 @@ body {
 	border: 2px outset #999;
 	text-align: center;
 	background-color: rgba(200, 200, 200, .3);
+	max-width: 500px;
 }
 .text {
 	padding-bottom: 50px;
@@ -49,17 +50,22 @@ body {
 
 .france {
 	background-image: url(http://www.french-flag.org/rippled-french-flag-720.jpg);
+	background-size: cover;
+	
 
 }
 
 .german {
 	background-image: url(http://www.german-flag.org/german-640.gif);
+	background-size: cover;
+	
 
-
-	}
+}
 
 .spanish {
 	background-image: url(http://www.eventsloscabos.com/wp-content/uploads/2013/12/mexican-flag-bandera-6179-2.jpg);
+	background-size: cover;
+	
 }
 
 

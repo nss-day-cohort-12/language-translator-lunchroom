@@ -19,7 +19,9 @@ function translate() {
 	console.log("toLanguage: ", toLanguage);
 
 	//get reference to flag container
-	var flagImage = document.getElementById('flag')
+	var flagImage = document.getElementById('flag');
+
+	flagImage.classList.remove('spanish', 'german', 'france');
 
 	//get text input value	
 	var text = document.getElementById("text").value;
@@ -43,8 +45,8 @@ function translate() {
 
   		//enters translated text to innerHTML
   		document.getElementById('translatedText').innerHTML = translatedText;
-
-      speak("es", translatedText);
+  	    speak("en-UK", "In Spanish that is.");
+        speak("es", translatedText);
 
   		return;
   	}
@@ -60,7 +62,7 @@ function translate() {
 
   		//enters translated text to innerHTML
   		document.getElementById('translatedText').innerHTML = translatedText;
-  		
+  		speak("en-UK", "In French that is.");
   		speak("fr", translatedText);
 
   		return;
@@ -77,7 +79,7 @@ function translate() {
 
   		//enters translated text to innerHTML
   		document.getElementById("translatedText").innerHTML = translatedText;
-
+  	  speak("en-UK", "In German that is.");	
       speak("de", translatedText);
 
   		return;
@@ -100,59 +102,98 @@ function translate() {
    else {
 
     if (fromLanguage === "Spanish" && toLanguage === "German"){
+      //adds german flag css
+  	  flagImage.classList.add('german');
+
       var translatedText = Dictionary.translateToGerman(Dictionary.translateFromSpanish(text));
 
       //enters translated text to innerHTML
       document.getElementById("translatedText").innerHTML = translatedText;
-      
+      speak("en-UK", "In German that is.");
       speak("de", translatedText);
+
+     
     }
 
     else if (fromLanguage === "Spanish" && toLanguage === "French"){
+      //adds french flag css
+  	  flagImage.classList.add('france');
+
       var translatedText = Dictionary.translateToFrench(Dictionary.translateFromSpanish(text));
 
       //enters translated text to innerHTML
       document.getElementById("translatedText").innerHTML = translatedText;
-      
+      speak("en-UK", "In French that is.");
       speak("fr", translatedText);
+
+      
     }
 
 
     else if (fromLanguage === "French" && toLanguage === "German"){
+      //adds german flag css
+  	  flagImage.classList.add('german');
       var translatedText = Dictionary.translateToGerman(Dictionary.translateFromFrench(text));
 
       //enters translated text to innerHTML
       document.getElementById("translatedText").innerHTML = translatedText;
-      
+      speak("en-UK", "In German that is.");
       speak("de", translatedText);
+
     }
 
     else if (fromLanguage === "French" && toLanguage === "Spanish"){
+      //adds spanish flag css
+  	  flagImage.classList.add('spanish');
       var translatedText = Dictionary.translateToSpanish(Dictionary.translateFromFrench(text));
 
       //enters translated text to innerHTML
       document.getElementById("translatedText").innerHTML = translatedText;
-      
+      speak("en-UK", "In Spanish that is.");
       speak("es", translatedText);
+
     }
 
     else if (fromLanguage === "German" && toLanguage === "Spanish"){
+      //adds spanish flag css
+  	  flagImage.classList.add('spanish');
       var translatedText = Dictionary.translateToSpanish(Dictionary.translateFromGerman(text));
 
       //enters translated text to innerHTML
       document.getElementById("translatedText").innerHTML = translatedText;
-      
+      speak("en-UK", "In Spanish that is.");
       speak("es", translatedText);
+
     }
 
-    else {
+    else if (fromLanguage === "German" && toLanguage === "French") {
+      //adds french flag css
+  	  flagImage.classList.add('france');
       var translatedText = Dictionary.translateToFrench(Dictionary.translateFromGerman(text));
 
       //enters translated text to innerHTML
       document.getElementById("translatedText").innerHTML = translatedText;
-      
+      speak("en-UK", "In French that is.");
       speak("fr", translatedText);
+
     }
+    else if (fromLanguage === toLanguage) {
+    	var msg = new SpeechSynthesisUtterance("WHY ARE YOU TRYING TO TRANSLATE TO THE SAME LANGUAGE. LOOKS LIKE SOMEONE NEEDS TO GO BACK TO FIRST GRADE. IDIOT");
+
+    	msg.lang = 'en-UK';
+  	    window.speechSynthesis.speak(msg);
+    }
+    else {
+    	//adds speech reader function to alert
+  		var msg = new SpeechSynthesisUtterance("Please Select a Language");
+  	    msg.lang = 'zh-Hans';
+  	    window.speechSynthesis.speak(msg);
+  	    var msg = new SpeechSynthesisUtterance("Or for those who cannot speak Mandarin. Please Select a Language y'all");
+  	    msg.lang = 'en-UK';
+  	    window.speechSynthesis.speak(msg);
+  	    alert("Please Select a Language");
+  	}
+
 
   }
 }
