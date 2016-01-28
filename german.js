@@ -6,7 +6,14 @@ var Dictionary = (function() {
     "happy": "lustig",
     "new": "neu",
     "year": "Jahr",
-    "beer": "Bier"
+    "beer": "Bier",
+    "hello": "hallo",
+    "is": "ist",
+    "you": "du",
+    "the": "der",
+    "birthday": "Geburtstag",
+    "anniversary": "Jahrestag",
+    "and", "und"
   };
 
   return {
@@ -14,11 +21,10 @@ var Dictionary = (function() {
       return germanLexicon;
     },
     translateToGerman: function(userInput) {
-      //translate userInput to German
-
       //convert user Input to all lowerCase
       userInput = userInput.toLowerCase();
 
+      //for each key in germanLexicon, replace with the key's value if found
       for (var key in germanLexicon){
         userInput = userInput.replace(key, germanLexicon[key]);
       }
