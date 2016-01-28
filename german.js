@@ -8,7 +8,6 @@ var Dictionary = (function() {
     "year": "Jahr",
     "beer": "Bier",
     "hello": "hallo",
-    "is": "ist",
     "you": "du",
     "the": "der",
     "birthday": "Geburtstag",
@@ -17,6 +16,24 @@ var Dictionary = (function() {
   };
 
   return {
+    handleCaps: function(userInput) {
+      //trim whitespace from before and after userInput
+      userInput = userInput.trim();
+
+      for (var i = 0; i < userInput.length - 1; i++) {
+        if (userInput[i] === "." || userInput[i] === "!" || userInput === "?"){
+          var j = i + 1;
+          while(userInput[j] === " "){
+            //find the next letter to capitalize
+            j++;
+          }
+          //console.log("j", j);
+          //console.log("userInput[j]", userInput[j]);
+          userInput = userInput.slice(0, j) + userInput[j].toUpperCase() + userInput.slice(j+1);
+        }
+      }
+      return userInput;
+    },
     getGermanLexicon: function() {
       return germanLexicon;
     },
@@ -28,8 +45,11 @@ var Dictionary = (function() {
       for (var key in germanLexicon){
         userInput = userInput.replace(key, germanLexicon[key]);
       }
-      return userInput;
+      
+      userInput = userInput[0].toUpperCase() + userInput.slice(1);
+      
+      return Dictionary.handleCaps(userInput);
     }
-  };
+  }
 
 })();
