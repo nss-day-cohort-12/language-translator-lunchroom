@@ -95,7 +95,7 @@ function translate() {
   }
 
 
-
+  //handle cases where fromLanguage is not English
 
    else {
 
