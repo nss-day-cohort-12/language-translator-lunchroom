@@ -12,7 +12,6 @@ var Dictionary = (function(prevDictionary) {
 		"you":"usted",
 		"birthday":"cumpleaños",
 		"beer":"cerveza",
-		"is":"es",
 		"good":"bien",
 		"people":"gente",
 		"are":"están",

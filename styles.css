@@ -38,6 +38,7 @@ body {
 }
 .translatedText {	
 	margin-top: 20px;
+	text-align: center;
 }
 .selectLanguage {
 	margin: 0 auto;
