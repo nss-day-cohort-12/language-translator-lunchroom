@@ -17,6 +17,8 @@ var Dictionary = (function() {
 
   return {
     handleCaps: function(userInput) {
+      userInput = userInput[0].toUpperCase() + userInput.slice(1);
+      
       //trim whitespace from before and after userInput
       userInput = userInput.trim();
 
@@ -46,7 +48,6 @@ var Dictionary = (function() {
         userInput = userInput.replace(key, germanLexicon[key]);
       }
       
-      userInput = userInput[0].toUpperCase() + userInput.slice(1);
       
       return Dictionary.handleCaps(userInput);
     }
