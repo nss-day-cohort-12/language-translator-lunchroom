@@ -3,6 +3,16 @@
 var button = document.getElementById("translate");
 button.addEventListener("click", translate);
 
+setInterval(function randomColorGen() {
+var randomColor = '#' + (function co(lor){   return (lor +=
+  [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'][Math.floor(Math.random()*16)])
+  && (lor.length == 6) ?  lor : co(lor); })('');
+  
+  // console.log();
+  var h1 = document.querySelector('.h1');
+  h1.style.color = randomColor;
+  
+}, 500);
 
 function speak(language, translatedText) {
   //speak the translated text in the given language
